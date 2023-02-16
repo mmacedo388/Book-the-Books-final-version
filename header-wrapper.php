@@ -47,6 +47,11 @@ else{
 			</a>
 			<?php } ?>
 			<?php if( $user_name ) { ?>
+			<a href="./register.php"><i class="bi bi-r-circle-fill"></i>
+			<li>Register</li>
+			</a>
+			<?php } ?>
+			<?php if( $user_name ) { ?>
 			<a>Welcome, <?php echo $user_name ?> </a>
 			<?php } ?>
 			<?php if( $user_name ) { ?>

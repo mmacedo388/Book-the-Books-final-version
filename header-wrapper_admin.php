@@ -32,11 +32,18 @@ else{
 			</a>
 			<?php } ?>
 			<?php if( $user_name ) { ?>
+			<a href="./register.php"><i class="bi bi-r-circle-fill"></i>
+			<li>Register</li>
+			</a>
+			<?php } ?>
+			<?php if( $user_name ) { ?>
 			<a>Welcome, <?php echo $user_name ?> </a>
 			<?php } ?>
+			<?php if( !$user_name ) { ?>
 			<a href="./login.php"><i class="bi bi-person-fill" ></i>
 			<li>Login</li>
 			</a>
+			<?php } ?>
 			<a href="./cart.php"><i class="bi bi-cart-fill" ></i>
 			<li>Cart</li>
 			</a>
