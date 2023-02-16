@@ -583,6 +583,19 @@ html, body
 	display: none;
   }
 
+  .p-cell-display{
+	display: flex;
+	flex-direction: row;
+  }
+
+  .p-cell-image{
+	width: 175px;
+  	height: 269px;
+  	object-fit: scale-down;
+  }
+
+
+
 /*********************************************************************************/
 /* Shopping Cart                                                                 */
 /*********************************************************************************/

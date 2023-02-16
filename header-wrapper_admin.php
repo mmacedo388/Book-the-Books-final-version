@@ -26,6 +26,11 @@ else{
 	</div>
 	<div id="menu2">
 		<ul>
+			<?php if( !$user_name ) { ?>
+			<a href=""><i class="bi bi-r-circle-fill"></i>
+			<li>Register</li>
+			</a>
+			<?php } ?>
 			<?php if( $user_name ) { ?>
 			<a>Welcome, <?php echo $user_name ?> </a>
 			<?php } ?>
