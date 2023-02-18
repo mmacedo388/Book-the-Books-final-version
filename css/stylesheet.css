@@ -585,13 +585,16 @@ html, body
 
   .p-cell-display{
 	display: flex;
-	flex-direction: row;
-  }
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+	}
 
   .p-cell-image{
-	width: 175px;
-  	height: 269px;
-  	object-fit: scale-down;
+	max-width: 175px;
+  	max-height: 269px;
+	overflow: hidden;
   }
 
 
