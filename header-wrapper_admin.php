@@ -35,7 +35,7 @@ else{
 			<a>Welcome, <?php echo $user_name ?> </a>
 			<?php } ?>
 			<?php if( !$user_name ) { ?>
-			<a href="./login.php"><i class="bi bi-person-fill" ></i>
+			<a href="/login"><i class="bi bi-person-fill" ></i>
 			<li>Login</li>
 			</a>
 			<?php } ?>
