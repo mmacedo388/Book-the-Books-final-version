@@ -62,9 +62,12 @@ if ($_SESSION) {
 			<li>Cart</li>
 			</a>
 			<?php if ($user_name) { ?>
-			<a href="./logout.php"><i class="bi bi-box-arrow-right"></i>
-			<li>Logout</li>
-			</a>
+				<form action="/login/logout.php" method="post" id="logout-form">
+					<button type="submit">
+						<i class="bi bi-box-arrow-right"></i>
+						Logout
+					</button>
+				</form>
 			<?php } ?>
 		</ul>
 	</div>

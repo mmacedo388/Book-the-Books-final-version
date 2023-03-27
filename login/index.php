@@ -15,8 +15,8 @@
 	<?php include('../header.php') ?>
 
 <body>
-	<?php
-     include('../header-wrapper.php');
+<?php
+include('../header-wrapper.php');
  include('../slideshow.php');
  include('_form.php');
  include('../footer.php');

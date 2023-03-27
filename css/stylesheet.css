@@ -337,7 +337,8 @@ ul.contact li a:before {
     right: 15px;
 }
 
-#menu2 li {
+#menu2 li,
+#logout-form > button {
     display: inline-block;
     color: #f2f2f2 !important;
 }
@@ -358,6 +359,17 @@ ul.contact li a:before {
 #search > input {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+}
+
+#logout-form {
+    display: inline-block;
+    background: none; /* temp */
+    padding: 0; /* temp */
+}
+
+#logout-form > button {
+    background: none;
+    border: 0;
 }
 
 /*********************************************************************************/
