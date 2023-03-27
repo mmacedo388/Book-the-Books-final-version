@@ -1,6 +1,15 @@
 <?php
 include('connection.php');
-$catalog = mysqli_query($dbc, "SELECT * FROM catalog LIMIT 1000");
+
+$query = isset($_GET['q']) ? trim(strip_tags(addslashes($_GET['q']))) : null;
+
+if ($query) {
+	$where = "name LIKE '%$query%' OR description LIKE '%$query%'";
+    $catalog = mysqli_query($dbc, "SELECT * FROM catalog WHERE $where LIMIT 1000");
+} else {
+    $catalog = mysqli_query($dbc, "SELECT * FROM catalog LIMIT 1000");
+}
+
 ?>
 
 
@@ -16,14 +25,14 @@ $catalog = mysqli_query($dbc, "SELECT * FROM catalog LIMIT 1000");
 				<form method="POST" action="./add_script.php">
 					<input type="text" name="name" value="<?php echo $items['name'] ?>"></input>
 					<input type="text" name="price" value="<?php echo $items['price'] ?>"></input>
-					<input type="text" name="desc" value="<?php echo $items['desc'] ?>"></input>
+					<input type="text" name="description" value="<?php echo $items['description'] ?>"></input>
 					<input type="text" name="img" value="<?php echo $items['img'] ?>"></input>
 					<div class="p-cell-display">
 						<img class="p-cell-image" src="/images/<?php echo $items['img'] ?>">
 					</div>
 					<div class="p-name"><?php echo $items['name'] ?></div>
 					<div class="p-price"><?php echo $items['price'] ?>&euro;</div>
-					<div class="p-desc"><?php echo $items['desc'] ?></div>
+					<div class="p-description"><?php echo $items['description'] ?></div>
 					<input class="p-quantity" type="number" name="quantity" value="1">
 					<button class="p-add">Add to Cart</button>
 

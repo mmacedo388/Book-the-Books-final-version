@@ -33,7 +33,7 @@ CREATE TABLE `cart` (
   `img` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `price` varchar(255) NOT NULL,
-  `desc` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
   `quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
