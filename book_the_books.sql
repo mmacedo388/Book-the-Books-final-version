@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 10-Mar-2023 às 20:41
+-- Tempo de geração: 11-Abr-2023 às 17:40
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -49,24 +49,22 @@ CREATE TABLE `catalog` (
   `price` varchar(255) NOT NULL,
   `desc` varchar(255) NOT NULL,
   `img` varchar(255) NOT NULL,
-  `quantity` varchar(255) NOT NULL
+  `quantity` varchar(255) NOT NULL,
+  `category` varchar(255) NOT NULL,
+  `sub-category` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `catalog`
 --
 
-INSERT INTO `catalog` (`id`, `name`, `price`, `desc`, `img`, `quantity`) VALUES
-(2, 'olá', '123', 'olá', '2023.01.22-18.35.25.jpg', '1'),
-(3, 'o sorriso das estrelas', '456', 'olá', '2023.01.22-18.56.30.jpg', '1'),
-(4, 'adeus', '789', 'arcadia', '2023.01.22-18.57.16.jpg', '1'),
-(5, 'fedsdgs', '123', 'adsasfdesa', '2023.01.22-18.57.47.jpg', '1'),
-(6, 'edfgdhaf', '456', 'sadfrsag', '2023.01.22-19.00.55webp', '1'),
-(7, 'fgrew', '45', 'wefsdewsd', '2023.01.22-19.01.13.jpg', '1'),
-(8, '3qwerffdsafrds', '1321', 'dsafdsaf', '2023.01.22-19.01.51jpeg', '1'),
-(10, 'adssada', '123213', 'asfqewad', '2023.01.27-19.11.22.jpg', '1'),
-(11, 'asdsafd', '21321', 'asdqwasas', '2023.01.27-21.00.16jpeg', '1'),
-(12, 'dfssed', '123 12', 'faa', '2023.01.28-20.19.13.jpg', '1');
+INSERT INTO `catalog` (`id`, `name`, `price`, `desc`, `img`, `quantity`, `category`, `sub-category`) VALUES
+(1, 'O Buraco da Agulha', '19,90', 'Ken Follett', 'book_1.jpg', '100', 'Literatura', 'Policial e Thriller'),
+(2, 'Ao Cair da Noite', '17,90', 'Judith McNaught', 'book_2.jpg', '50', 'Literatura', 'Romance'),
+(3, 'A Última Odisseia', '18,90', 'James Rollins', 'book_3.jpg', '25', 'Literatura', 'Policial e Thriller'),
+(4, 'Paranoia', '16,90', 'Lisa Jackson', 'book_4.jpg', '15', 'Literatura', 'Policial e Thriller'),
+(5, 'Sol da Meia-Noite', '26,90', 'Stephenie Meyer', 'book_5.jpg', '30', 'Literatura', 'Jovem Adulto'),
+(6, 'D. Filipa de Lencastre', '14,90', 'Isabel Stilwell', 'book_6.jpg', '45', 'Infantil (até 6 anos)', 'Ficção');
 
 -- --------------------------------------------------------
 
