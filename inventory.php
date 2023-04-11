@@ -4,7 +4,7 @@ include('connection.php');
 $query = isset($_GET['q']) ? trim(strip_tags(addslashes($_GET['q']))) : null;
 
 if ($query) {
-	$where = "name LIKE '%$query%' OR description LIKE '%$query%' OR category LIKE '%$query%' OR sub_category LIKE '%$query%'";
+	$where = "name LIKE '%$query%' OR description LIKE '%$query%' OR category LIKE '%$query%' OR sub-category LIKE '%$query%'";
 	$catalog = mysqli_query($dbc, "SELECT * FROM catalog WHERE $where LIMIT 1000");
 } else {
 	$catalog = mysqli_query($dbc, "SELECT * FROM catalog LIMIT 1000");
