@@ -4,7 +4,7 @@ include('connection.php');
 $query = isset($_GET['q']) ? trim(strip_tags(addslashes($_GET['q']))) : null;
 
 if ($query) {
-	$where = "name LIKE '%$query%' OR description LIKE '%$query%'";
+	$where = "name LIKE '%$query%' OR description LIKE '%$query%' OR category LIKE '%$query%' OR sub_category LIKE '%$query%'";
 	$catalog = mysqli_query($dbc, "SELECT * FROM catalog WHERE $where LIMIT 1000");
 } else {
 	$catalog = mysqli_query($dbc, "SELECT * FROM catalog LIMIT 1000");
@@ -27,6 +27,8 @@ if ($query) {
 						<input type="text" name="price" value="<?php echo $items['price'] ?>"></input>
 						<input type="text" name="description" value="<?php echo $items['description'] ?>"></input>
 						<input type="text" name="img" value="<?php echo $items['img'] ?>"></input>
+						<input type="text" name="category" value="<?php echo $items['category'] ?>"></input>
+						<input type="text" name="category" value="<?php echo $items['sub-category'] ?>"></input>
 						<div class="p-cell-display">
 							<img class="p-cell-image" src="/images/<?php echo $items['img'] ?>">
 						</div>
