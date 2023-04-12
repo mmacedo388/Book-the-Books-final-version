@@ -47,18 +47,18 @@ CREATE TABLE `catalog` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `price` varchar(255) NOT NULL,
-  `desc` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
   `img` varchar(255) NOT NULL,
   `quantity` varchar(255) NOT NULL,
   `category` varchar(255) NOT NULL,
-  `sub-category` varchar(255) NOT NULL
+  `sub_category` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `catalog`
 --
 
-INSERT INTO `catalog` (`id`, `name`, `price`, `desc`, `img`, `quantity`, `category`, `sub-category`) VALUES
+INSERT INTO `catalog` (`id`, `name`, `price`, `description`, `img`, `quantity`, `category`, `sub_category`) VALUES
 (1, 'O Buraco da Agulha', '19,90', 'Ken Follett', 'book_1.jpg', '100', 'Literatura', 'Policial e Thriller'),
 (2, 'Ao Cair da Noite', '17,90', 'Judith McNaught', 'book_2.jpg', '50', 'Literatura', 'Romance'),
 (3, 'A Última Odisseia', '18,90', 'James Rollins', 'book_3.jpg', '25', 'Literatura', 'Policial e Thriller'),
