@@ -563,7 +563,6 @@ div.p-desc {
 }
 button.p-add {
     display: inline;
-    margin: 1em;
     padding: 1em;
     background: #ff6816;
     border-radius: 8px;
@@ -583,10 +582,6 @@ button.p-add:hover {
     cursor: pointer;
 }
 
-.p-cell input {
-    display: none;
-}
-
 .p-cell-display {
     display: flex;
     flex-direction: row;
@@ -600,6 +595,17 @@ button.p-add:hover {
     height: 269px;
     height: 100%;
     object-fit: cover;
+}
+
+.p-cell .quantity-and-btn {
+    display: flex;
+    margin: 1em;
+    gap: 10px;
+}
+
+.p-cell .p-quantity {
+    width: 70px;
+    text-align: center;
 }
 
 /*********************************************************************************/

@@ -29,7 +29,6 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `cart` (
   `id` int(11) NOT NULL,
-  `id_user` int(11) NOT NULL,
   `img` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `price` varchar(255) NOT NULL,

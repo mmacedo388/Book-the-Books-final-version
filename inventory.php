@@ -22,13 +22,8 @@ if ($query) {
 
 			<td>
 				<div class="p-cell">
-					<form method="POST" action="./add_script.php">
-						<input type="text" name="name" value="<?php echo $items['name'] ?>"></input>
-						<input type="text" name="price" value="<?php echo $items['price'] ?>"></input>
-						<input type="text" name="description" value="<?php echo $items['description'] ?>"></input>
-						<input type="text" name="img" value="<?php echo $items['img'] ?>"></input>
-						<input type="text" name="category" value="<?php echo $items['category'] ?>"></input>
-						<input type="text" name="category" value="<?php echo $items['sub_category'] ?>"></input>
+					<form method="POST" action="/cart/add-product.php">
+						<input type="hidden" name="id" value="<?php echo $items['id'] ?>"></input>
 						<div class="p-cell-display">
 							<img class="p-cell-image" src="/images/<?php echo $items['img'] ?>">
 						</div>
@@ -37,9 +32,11 @@ if ($query) {
 						<div class="p-description"><?php echo $items['description'] ?></div>
 						<div class="p-category"><?php echo $items['category'] ?></div>
 						<div class="p-sub_category"><?php echo $items['sub_category'] ?></div>
-						<input class="p-quantity" type="number" name="quantity" value="1">
-						<button class="p-add">Add to Cart</button>
-
+						
+						<div class="quantity-and-btn">
+							<input class="p-quantity" type="number" name="quantity" value="1" >
+							<button class="p-add">Add to Cart</button>
+						</div>
 					</form>
 				</div>
 			</td>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ($_SESSION) {
+if (isset($_SESSION['user_id'])) {
     $user_admin = $_SESSION['user_admin'];
     $user_name = $_SESSION['user_name'];
 } else {
