@@ -49,4 +49,10 @@ if (!$lineFound) {
 
 $_SESSION['cart'] = $cart;
 
-header("Location: /cart");
+$page = addslashes($_POST['page'] ?? '');
+
+if (substr($page, 0, 1) === '/') {
+    header("Location: $page");
+} else {
+    header("Location: /");
+}

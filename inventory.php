@@ -23,6 +23,7 @@ if ($query) {
 			<td>
 				<div class="p-cell">
 					<form method="POST" action="/cart/add-product.php">
+						<input type="hidden" name="page" value="<?php echo $_SERVER['REQUEST_URI'] ?>" />
 						<input type="hidden" name="id" value="<?php echo $items['id'] ?>"></input>
 						<div class="p-cell-display">
 							<img class="p-cell-image" src="/images/<?php echo $items['img'] ?>">

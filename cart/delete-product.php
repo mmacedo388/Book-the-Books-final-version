@@ -1,22 +1,25 @@
 <?php
-include ('connection.php');
+
 session_start();
-if($_SESSION){
-$user_id = $_SESSION['user_id'];
-}
-else{
-	$user_id = "";
+
+$id = $_POST['id'] ?? '';
+$id = (int) $id;
+
+$cart = $_SESSION['cart'] ?? ['lines' => []];
+
+foreach ($cart['lines'] as $index => $line) {
+    if ($line['product_id'] === $id) {
+        unset($cart['lines'][$index]);
+        break;
+    }
 }
 
-$id = $_GET['id'];
+$_SESSION['cart'] = $cart;
 
-?>
-<?php
-if($user_id && $id){
-mysqli_query( $dbc, "DELETE FROM `cart` WHERE id = '$id' && id_user = '$user_id'");
-header('Location: cart.php');
+$page = addslashes($_POST['page'] ?? '');
+
+if (substr($page, 0, 1) === '/') {
+    header("Location: $page");
+} else {
+    header("Location: /");
 }
-else{
-    header('Location: login.php');
-}
-?>
