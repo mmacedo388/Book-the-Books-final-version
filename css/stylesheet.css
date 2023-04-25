@@ -2,6 +2,12 @@
     --primary-color: #ff6816;
 }
 
+/* reset css */
+button {
+    border: 0;
+    background: none;
+}
+
 html,
 body {
     width: 100%;
@@ -340,6 +346,10 @@ ul.contact li a:before {
 #menu2 li,
 #logout-form > button {
     display: inline-block;
+}
+
+#menu2 li,
+#menu2 button {
     color: #f2f2f2 !important;
 }
 
