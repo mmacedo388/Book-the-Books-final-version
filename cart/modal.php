@@ -24,7 +24,7 @@ if ($productIds) :
     }
 ?>
 
-    <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-total="<?php echo $cartTotal ?>">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header border-bottom-0">
@@ -53,15 +53,16 @@ if ($productIds) :
                             foreach ($cart['lines'] as $line) :
 
                                 $productId = $line['product_id'];
+                                $subTotal =  ((float)$products[$productId]['price']) * ((int)$line['quantity']);
                             ?>
-                                <tr>
+                                <tr data-sub-total="<?php echo $subTotal ?>">
                                     <td class="w-25">
                                         <img src="/images/<?php echo $products[$productId]['img'] ?>" class="img-fluid img-thumbnail" alt="<?php echo $products[$productId]['name'] ?>">
                                     </td>
                                     <td><?php echo $products[$productId]['name'] ?></td>
                                     <td><?php echo $products[$productId]['price'] ?>&euro;</td>
-                                    <td class="qty"><input type="text" class="form-control" name="quantity" value="<?php echo $line['quantity'] ?>"></td>
-                                    <td><?php echo ((float)$products[$productId]['price']) * ((int)$line['quantity']) ?>&euro;</td>
+                                    <td class="qty"><input type="number" min="1" class="form-control" name="quantity" value="<?php echo $line['quantity'] ?>" data-product-id="<?php echo $productId ?>" data-price="<?php echo $products[$productId]['price'] ?>"></td>
+                                    <td class="sub-total"><?php echo $subTotal ?>&euro;</td>
                                     <td>
                                         <form action="/cart/delete-product.php" method="post" class="delete_button">
                                             <input type="hidden" name="page" value="<?php echo $_SERVER['REQUEST_URI'] ?>" />
@@ -76,7 +77,7 @@ if ($productIds) :
                         </tbody>
                     </table>
                     <div class="d-flex justify-content-end">
-                        <h5>Total: <span class="price text-success"><?php echo $cartTotal ?>&euro;</span></h5>
+                        <h5>Total: <span class="price text-success cart-total"><?php echo $cartTotal ?>&euro;</span></h5>
                     </div>
                 </div>
                 <div class="modal-footer border-top-0 d-flex justify-content-between">

@@ -35,7 +35,7 @@ if ($query) {
 						<div class="p-sub_category"><?php echo $items['sub_category'] ?></div>
 						
 						<div class="quantity-and-btn">
-							<input class="p-quantity" type="number" name="quantity" value="1" >
+							<input class="p-quantity" type="number" name="quantity" min="1" value="1" >
 							<button class="p-add">Add to Cart</button>
 						</div>
 					</form>
