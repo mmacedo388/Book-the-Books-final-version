@@ -1,5 +1,8 @@
 <?php
-session_start();
+if (!isset($_SESSION)) {
+	session_start();
+}
+
 if (isset($_SESSION['user_id'])) {
 	$user_admin = $_SESSION['user_admin'];
 	$user_name = $_SESSION['user_name'];
@@ -7,7 +10,6 @@ if (isset($_SESSION['user_id'])) {
 	$user_name = "";
 	$user_admin = "";
 }
-
 ?>
 <div id="header-wrapper">
 	<div id="header" class="container">
