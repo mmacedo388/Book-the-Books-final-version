@@ -1,6 +1,6 @@
 <?php
 
-include('../connection.php');
+require('../connection.php');
 
 // obter os dados enviados a partir do formulario
 $user = isset($_POST['user']) ? $_POST['user'] : '';

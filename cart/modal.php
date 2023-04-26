@@ -82,7 +82,7 @@ if ($productIds) :
                 </div>
                 <div class="modal-footer border-top-0 d-flex justify-content-between">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success">Checkout</button>
+                    <a href="/checkout" class="btn btn-success">Checkout</a>
                 </div>
             </div>
         </div>

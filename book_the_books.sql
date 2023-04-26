@@ -21,20 +21,6 @@ SET time_zone = "+00:00";
 -- Banco de dados: `book_the_books`
 --
 
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `cart`
---
-
-CREATE TABLE `cart` (
-  `id` int(11) NOT NULL,
-  `img` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `price` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `quantity` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -45,7 +31,7 @@ CREATE TABLE `cart` (
 CREATE TABLE `catalog` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `price` varchar(255) NOT NULL,
+  `price` decimal(6,2) NOT NULL,
   `description` varchar(255) NOT NULL,
   `img` varchar(255) NOT NULL,
   `quantity` varchar(255) NOT NULL,
@@ -58,12 +44,12 @@ CREATE TABLE `catalog` (
 --
 
 INSERT INTO `catalog` (`id`, `name`, `price`, `description`, `img`, `quantity`, `category`, `sub_category`) VALUES
-(1, 'O Buraco da Agulha', '19,90', 'Ken Follett', 'book_1.jpg', '100', 'Literatura', 'Policial e Thriller'),
-(2, 'Ao Cair da Noite', '17,90', 'Judith McNaught', 'book_2.jpg', '50', 'Literatura', 'Romance'),
-(3, 'A Última Odisseia', '18,90', 'James Rollins', 'book_3.jpg', '25', 'Literatura', 'Policial e Thriller'),
-(4, 'Paranoia', '16,90', 'Lisa Jackson', 'book_4.jpg', '15', 'Literatura', 'Policial e Thriller'),
-(5, 'Sol da Meia-Noite', '26,90', 'Stephenie Meyer', 'book_5.jpg', '30', 'Literatura', 'Jovem Adulto'),
-(6, 'D. Filipa de Lencastre', '14,90', 'Isabel Stilwell', 'book_6.jpg', '45', 'Infantil (até 6 anos)', 'Ficção');
+(1, 'O Buraco da Agulha', '19.90', 'Ken Follett', 'book_1.jpg', '100', 'Literatura', 'Policial e Thriller'),
+(2, 'Ao Cair da Noite', '17.90', 'Judith McNaught', 'book_2.jpg', '50', 'Literatura', 'Romance'),
+(3, 'A Última Odisseia', '18.90', 'James Rollins', 'book_3.jpg', '25', 'Literatura', 'Policial e Thriller'),
+(4, 'Paranoia', '16.90', 'Lisa Jackson', 'book_4.jpg', '15', 'Literatura', 'Policial e Thriller'),
+(5, 'Sol da Meia-Noite', '26.90', 'Stephenie Meyer', 'book_5.jpg', '30', 'Literatura', 'Jovem Adulto'),
+(6, 'D. Filipa de Lencastre', '14.90', 'Isabel Stilwell', 'book_6.jpg', '45', 'Infantil (até 6 anos)', 'Ficção');
 
 -- --------------------------------------------------------
 
@@ -109,18 +95,32 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `user`, `email`, `password`, `admin`) VALUES
-(1, 'Miguel de Portugal', 'mmacedo388@hotmail.com', '123', 1),
-(2, 'Ninguém', 'nayron@gmail.com', '123', 0);
+(1, 'Miguel de Portugal', 'mmacedo388@hotmail.com', '$2y$10$e8Ia.CvUWo6J6cZCmfmoTOhJmlyxyUIrRu3hOPw0JyvXubcC4PF3i', 1), -- password == 123
+(2, 'Ninguém', 'nayron@gmail.com', '$2y$10$0NyRoQCucA7ofTjIkpuSxe5.yaj3yFHsyu.Bm2WW63mWp6f3i.1/a', 0); -- password == 123
+
+
+--
+-- Estrutura da tabela `order`
+--
+
+CREATE TABLE `order` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `phone_number` varchar(255) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `address_zip` char(8) DEFAULT NULL,
+  `lines` json DEFAULT NULL,
+  `payment_method` enum('at_delivery','mbway') DEFAULT NULL,
+  `total` decimal(8,2) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Índices para tabelas despejadas
 --
-
---
--- Índices para tabela `cart`
---
-ALTER TABLE `cart`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices para tabela `catalog`
@@ -143,12 +143,6 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT de tabelas despejadas
 --
-
---
--- AUTO_INCREMENT de tabela `cart`
---
-ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT de tabela `catalog`
