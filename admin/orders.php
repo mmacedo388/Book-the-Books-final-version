@@ -1,6 +1,7 @@
 <?php
 
-require '../connection.php';
+
+require 'common.php';
 
 $result = mysqli_query($dbc, "SELECT id, name, email, phone_number, total, created_at FROM `order` ORDER BY created_at DESC");
 
@@ -18,10 +19,10 @@ if (!$result) {
 <body>
 <?php include '../header-wrapper_admin.php' ?>
 
-<div id="orders">
+<div id="order-list">
 	<h1>Orders</h1>
 
-	<table>
+	<table class="list-table">
 		<thead>
 			<tr>
 				<th>
@@ -65,7 +66,7 @@ if (!$result) {
 
 
 <?php include '../footer.php' ?>
-<script src="./js/banner.js"></script>
-<script src="./js/cart.js"></script>
+<script src="/js/banner.js"></script>
+<script src="/js/cart.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 
-require '../connection.php';
+require 'common.php';
 
 $id = mysqli_real_escape_string($dbc, $_GET['id'] ?? '');
 if (!$id) {
@@ -46,7 +46,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 	<a href="/admin/orders.php">Order List</a>
 
-	<table>
+	<table class="list-table">
 		<tbody>
 			<tr>
 				<th>Name</th>

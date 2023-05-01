@@ -93,6 +93,7 @@ input[type="submit"]:hover {
 }
 
 input[type="text"],
+input[type="number"],
 input[type="email"],
 input[type="password"],
 select,
@@ -624,7 +625,8 @@ button.p-add:hover {
     text-align: center;
 }
 
-#orders {
+#order-list,
+#product-list {
     margin: 100px 20px 0;
     border-radius: 5px;
     background-color: #f2f2f2;
@@ -632,17 +634,17 @@ button.p-add:hover {
     color: rgba(0, 0, 0, 0.8);
 }
 
-#orders a {
+.list-table a {
     color: var(--primary-color);
 }
 
-#orders > table td,
-#orders > table th {
+.list-table td,
+.list-table th {
     padding: 5px 10px;
     border: 1px solid #999;
 }
 
-#orders line > td {
+#orders .line > td {
     padding: 0;
 }
 

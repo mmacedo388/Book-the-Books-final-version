@@ -1,5 +1,9 @@
 <?php
-session_start();
+
+if (!isset($_SESSION)) {
+    session_start();
+}
+
 if ($_SESSION) {
     $user_name = $_SESSION['user_name'];
 } else {
@@ -11,13 +15,13 @@ if ($_SESSION) {
 	<div id="header" class="container">
 		<div id="menu">
 			<ul>
-				<a href="./index.php" title="Homepage">
+				<a href="/" title="Homepage">
 				<li>Homepage</li>
 				</a>
-				<a href="./products.php" title="Products">
+				<a href="/admin/products.php" title="Products">
 				<li>Products</li>
 				</a>
-				<a href="./admin/orders.php" title="Orders">
+				<a href="/admin/orders.php" title="Orders">
 				<li>Orders</li>
 				</a>
 			</ul>
