@@ -53,7 +53,7 @@ if (isset($_SESSION['user_id'])) {
 				</a>
 			<?php } ?>
 			<?php if ($user_name) { ?>
-				<a>Welcome, <?php echo $user_name ?> </a>
+				<span>Welcome, <?php echo $user_name ?> </span>
 			<?php } ?>
 			<?php if (!$user_name) { ?>
 				<a href="/login"><i class="bi bi-person-fill"></i>

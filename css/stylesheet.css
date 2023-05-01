@@ -49,8 +49,14 @@ p {
 }
 
 a {
-    color: rgba(255, 255, 255, 0.8) !important;
-    text-decoration: none !important;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition-duration: 200ms;
+}
+
+a:hover {
+    color: rgba(255, 255, 255, 0.8);
+    opacity: 0.5;
 }
 
 .container {
@@ -618,6 +624,36 @@ button.p-add:hover {
     text-align: center;
 }
 
-/*********************************************************************************/
-/* Shopping Cart                                                                 */
-/*********************************************************************************/
+#orders {
+    margin: 100px 20px 0;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+#orders a {
+    color: var(--primary-color);
+}
+
+#orders > table td,
+#orders > table th {
+    padding: 5px 10px;
+    border: 1px solid #999;
+}
+
+#orders line > td {
+    padding: 0;
+}
+
+#orders .line-table {
+    width: 100%;
+}
+
+#orders .line-table td {
+    border: 0;
+}
+
+#orders .line-table img {
+    width: 100px;
+}

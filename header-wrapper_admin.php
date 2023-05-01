@@ -17,7 +17,7 @@ if ($_SESSION) {
 				<a href="./products.php" title="Products">
 				<li>Products</li>
 				</a>
-				<a href="./orders.php" title="Orders">
+				<a href="./admin/orders.php" title="Orders">
 				<li>Orders</li>
 				</a>
 			</ul>
@@ -31,7 +31,7 @@ if ($_SESSION) {
 			</a>
 			<?php } ?>
 			<?php if ($user_name) { ?>
-			<a>Welcome, <?php echo $user_name ?> </a>
+			<span>Welcome, <?php echo $user_name ?> </span>
 			<?php } ?>
 			<?php if (!$user_name) { ?>
 			<a href="/login"><i class="bi bi-person-fill" ></i>
