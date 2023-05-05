@@ -1,4 +1,4 @@
-<form method="post" enctype="multipart/form-data" action="save.php">
+<form method="post" enctype="multipart/form-data" action="save.php" id="form-product-update">
 	<input type="hidden" name="page" value="<?php echo $_SERVER['REQUEST_URI'] ?>" />
 
 	<?php if (isset($product['id'])): ?>
@@ -59,6 +59,13 @@
 		<div class="error-msg">Invalid Description</div>
 		<?php endif ?>
 	</div>
-	
-	<input type="submit" value="<?php echo isset($product['id']) ? 'Save' : 'Create' ?>" />  
-	</form>
+</form>
+
+<form method="post" action="/admin/products/delete.php" id="form-product-delete" onsubmit="return confirm('Are you sure you want to delete this product?')">
+	<input type="hidden" name="id" value="<?php echo $product['id'] ?>" />
+</form>
+
+<div class="submit-btns">
+	<input type="submit" form="form-product-update" value="<?php echo isset($product['id']) ? 'Save' : 'Create' ?>" />  
+	<input type="submit" form="form-product-delete" value="Delete" />
+</div>

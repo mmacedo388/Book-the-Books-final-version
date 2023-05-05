@@ -659,3 +659,9 @@ button.p-add:hover {
 #orders .line-table img {
     width: 100px;
 }
+
+.submit-btns {
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+}
