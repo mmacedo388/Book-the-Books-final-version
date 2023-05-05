@@ -1,6 +1,6 @@
 <?php
 
-require 'common.php';
+require '../common.php';
 
 $result = mysqli_query($dbc, "SELECT * FROM `catalog`");
 
@@ -13,9 +13,9 @@ if (!$result) {
 <head>
 <meta charset="utf-8">
 <title>Products</title>
-<?php include '../header.php' ?>
+<?php include '../../header.php' ?>
 <body>
-<?php include '../header-wrapper_admin.php' ?>
+<?php include '../../header-wrapper_admin.php' ?>
 
 <div id="product-list">
 	<h1>Products</h1>
@@ -46,7 +46,7 @@ if (!$result) {
 				<td><?php echo $row['price'] ?>&euro;</td>
 				<td><?php echo $row['description'] ?></td>
 				<td>
-					<a href="/admin/product-edit.php?id=<?php echo $row['id'] ?>">Edit</a>
+					<a href="/admin/products/edit.php?id=<?php echo $row['id'] ?>">Edit</a>
 				</td>
 			</tr>
 			<?php endwhile ?>
@@ -54,7 +54,7 @@ if (!$result) {
 	</table>
 </div>
 
-<?php include '../footer.php' ?>
+<?php include '../../footer.php' ?>
 <script src="/js/banner.js"></script>
 <script src="/js/cart.js"></script>
 </body>

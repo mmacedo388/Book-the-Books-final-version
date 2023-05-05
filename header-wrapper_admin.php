@@ -18,7 +18,7 @@ if ($_SESSION) {
 				<a href="/" title="Homepage">
 				<li>Homepage</li>
 				</a>
-				<a href="/admin/products.php" title="Products">
+				<a href="/admin/products" title="Products">
 				<li>Products</li>
 				</a>
 				<a href="/admin/orders.php" title="Orders">
