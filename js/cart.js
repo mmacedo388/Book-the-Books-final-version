@@ -1,6 +1,10 @@
 const cartModal = document.getElementById('cartModal') // HTMLElement (object)
 const quantityInputs = cartModal.querySelectorAll('input[name="quantity"]') // HTMLElement (object)
 
+const formatCurrency = (value) => {
+	return new Intl.NumberFormat('pt-PT', { style: 'currency', currency: 'EUR' }).format(value)
+}
+
 // actualizar na modal
 const refreshQuantity = (input, quantity) => {
 	const price = parseFloat(input.dataset.price)
@@ -11,16 +15,16 @@ const refreshQuantity = (input, quantity) => {
 	// const subTotalEl = input.parentElement.nextElementSibling
 	const subTotalEl = row.querySelector('td.sub-total')
 	const newSubTotal = quantity * price
-	subTotalEl.innerHTML = newSubTotal + '&euro;'
+
+	subTotalEl.innerHTML = formatCurrency(newSubTotal)
 
 	const subTotal = parseFloat(row.dataset.subTotal)
-
 	const cartTotalEl = cartModal.querySelector('.cart-total')
 	const newTotal = parseFloat(cartModal.dataset.total) - subTotal + newSubTotal
-	cartTotalEl.innerHTML = newTotal + '&euro;'
 
-	row.dataset.subTotal = newSubTotal
+	cartTotalEl.innerHTML = formatCurrency(newTotal)
 	cartModal.dataset.total = newTotal
+	row.dataset.subTotal = newSubTotal
 }
 
 quantityInputs.forEach(function(input) {
