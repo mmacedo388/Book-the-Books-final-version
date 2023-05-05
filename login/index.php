@@ -1,11 +1,11 @@
 <?php
- session_start();
+session_start();
 
- if (isset($_SESSION['user_id'])) {
-     header('Location: /');
-     exit();
- }
- ?>
+if (isset($_SESSION['user_id'])) {
+	header('Location: /');
+	exit();
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -15,12 +15,12 @@
 	<?php include('../header.php') ?>
 
 <body>
-<?php
-include('../header-wrapper.php');
- include('../slideshow.php');
- include('_form.php');
- include('../footer.php');
- ?>
+	<?php
+	include('../header-wrapper.php');
+	include('../slideshow.php');
+	include('_form.php');
+	include('../footer.php');
+	?>
 	<script src="./js/banner.js"></script>
 	<script src="./js/cart.js"></script>
 </body>
