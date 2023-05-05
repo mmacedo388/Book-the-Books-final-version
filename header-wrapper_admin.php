@@ -56,7 +56,7 @@ if ($_SESSION) {
 		</ul>
 	</div>
 		<div id="logo">
-			<img src="./images/logo.png" style="width: 225px!important;">
+			<img src="/images/logo.png" style="width: 225px!important;">
 		</div>
 	</div>
 </div>

@@ -5,7 +5,7 @@
 
     <div class="card-group">
       <div class="card" style="width: 36rem;">
-        <img src="./images/jane_doe.jpg" class="img_about" alt="Jane">
+        <img src="/images/jane_doe.jpg" class="img_about" alt="Jane">
         <div class="container_about">
           <h5 class="card-title">Jane Doe</h5>
           <p class="card-text">CEO & Founder</p>
@@ -16,7 +16,7 @@
       </div>
     
       <div class="card" style="width: 36rem;">
-        <img src="./images/mike_ross.jpg" class="img_about" alt="Mike">
+        <img src="/images/mike_ross.jpg" class="img_about" alt="Mike">
         <div class="container_about">
           <h5 class="card-title">Mike Ross</h5>
           <p class="card-text">Art Ddirector</p>
@@ -27,7 +27,7 @@
       </div>
       
       <div class="card" style="width: 36rem;">
-        <img src="./images/john_doe.jpg" class="img_about" alt="John">
+        <img src="/images/john_doe.jpg" class="img_about" alt="John">
         <div class="container_about">
           <h5 class="card-title">John Doe</h5>
           <p class="card-text">Designer</p>

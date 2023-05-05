@@ -1,11 +1,11 @@
 <div class="slideshow-container">
 
 <div class="mySlides fade">
-  <img src="./images/destaque-home.png" style="width:100%">
+  <img src="/images/destaque-home.png" style="width:100%">
 </div>
 
 <div class="mySlides fade">
-  <img src="./images/destaque-home-2.png" style="width:100%">
+  <img src="/images/destaque-home-2.png" style="width:100%">
 </div>
 
 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>

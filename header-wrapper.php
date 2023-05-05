@@ -1,14 +1,14 @@
 <?php
 if (!isset($_SESSION)) {
-	session_start();
+    session_start();
 }
 
 if (isset($_SESSION['user_id'])) {
-	$user_admin = $_SESSION['user_admin'];
-	$user_name = $_SESSION['user_name'];
+    $user_admin = $_SESSION['user_admin'];
+    $user_name = $_SESSION['user_name'];
 } else {
-	$user_name = "";
-	$user_admin = "";
+    $user_name = "";
+    $user_admin = "";
 }
 ?>
 <div id="header-wrapper">
@@ -79,7 +79,7 @@ if (isset($_SESSION['user_id'])) {
 		</ul>
 	</div>
 	<div id="logo">
-		<img src="./images/logo.png" style="width: 225px!important" ;">
+		<img src="/images/logo.png" style="width: 225px!important" ;">
 	</div>
 </div>
 </div>
