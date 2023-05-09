@@ -54,7 +54,7 @@ $_SESSION['checkout_form_values'] = [];
 	<div class="form-row">
         Address Zip: <input type="text" required name="address_zip" value="<?php echo $values['address_zip'] ?? '' ?>" />
 
-        <?php if (in_array('address', $errors)): ?>
+        <?php if (in_array('address_zip', $errors)): ?>
         <div class="error-msg">Invalid Address Zip</div>
         <?php endif ?>
     </div>
