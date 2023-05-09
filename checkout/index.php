@@ -1,5 +1,5 @@
 <?php
-require(dirname(__DIR__) . '/connection.php');
+require('../connection.php');
 
 session_start();
 
@@ -24,15 +24,15 @@ $result = mysqli_query($dbc, "SELECT * FROM catalog WHERE id IN ($productIds)");
 $products = [];
 
 while ($row = mysqli_fetch_assoc($result)) {
-	$products[$row['id']] = $row;
+    $products[$row['id']] = $row;
 }
 
 $cartTotal = 0;
 $productTotalCount = 0;
 foreach ($cart['lines'] as $line) {
-	$id = $line['product_id'];
-	$productTotalCount += $line['quantity'];
-	$cartTotal += ((float) $products[$id]['price']) * ((int) $line['quantity']);
+    $id = $line['product_id'];
+    $productTotalCount += $line['quantity'];
+    $cartTotal += ((float) $products[$id]['price']) * ((int) $line['quantity']);
 }
 
 ?>
@@ -42,7 +42,7 @@ foreach ($cart['lines'] as $line) {
 <head>
 	<meta charset="utf-8">
 	<title>Checkout</title>
-	<?php include('../header.php') ?>
+	<?php include('../_head.php') ?>
 
 <body>
 <?php

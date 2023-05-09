@@ -1,5 +1,5 @@
 <?php
-include('connection.php');
+include('../connection.php');
 
 $query = isset($_GET['q']) ? trim(strip_tags(addslashes($_GET['q']))) : null;
 

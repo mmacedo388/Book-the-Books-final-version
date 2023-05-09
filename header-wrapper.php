@@ -15,28 +15,28 @@ if (isset($_SESSION['user_id'])) {
 	<div id="header" class="container">
 		<div id="menu">
 			<ul>
-				<a href="./index.php" title="Homepage">
+				<a href="/" title="Homepage">
 					<li>Homepage</li>
 				</a>
 
-				<a href="./catalog.php" title="Catalog">
+				<a href="/catalog" title="Catalog">
 					<li>Catalog</li>
 				</a>
-				<a href="./about_us.php" title="About Us">
+				<a href="/about-us" title="About Us">
 					<li>About Us</li>
 				</a>
-				<a href="./contact_us.php" title="Contact Us">
+				<a href="/contact-us" title="Contact Us">
 					<li>Contact Us</li>
 				</a>
 
-				<form id="search" action="/catalog.php" method="get">
+				<form id="search" action="/catalog" method="get">
 					<input type="search" class="form-control" name="q" value="<?php echo strip_tags(addslashes($_GET['q'] ?? '')) ?>" />
 					<button type="submit" id="search-btn" class="btn btn-primary"><i class="bi bi-search"></i></button>
 				</form>
 
 				<?php if ($user_admin == "1") { ?>
 
-					<a href="./admin.php" title="Admin">
+					<a href="/admin" title="Admin">
 						<li>Admin</li>
 					</a>
 

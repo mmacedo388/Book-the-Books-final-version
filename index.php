@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Homepage</title>
-<?php include 'header.php' ?>
+<?php include '_head.php' ?>
 <body>
 <?php include 'header-wrapper.php' ?>
 <?php include 'slideshow.php' ?>

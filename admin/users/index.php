@@ -1,6 +1,6 @@
 <?php
 
-require 'common.php';
+require '../common.php';
 
 $result = mysqli_query($dbc, "SELECT id, user, email FROM `user`");
 
@@ -13,9 +13,9 @@ if (!$result) {
 <head>
 <meta charset="utf-8">
 <title>Users</title>
-<?php include '../header.php' ?>
+<?php include '../../_head.php' ?>
 <body>
-<?php include '../header-wrapper_admin.php' ?>
+<?php include '../_header.php' ?>
 
 <div id="product-list">
 	<h1>Users</h1>
@@ -40,7 +40,7 @@ if (!$result) {
 	</table>
 </div>
 
-<?php include '../footer.php' ?>
+<?php include '../../footer.php' ?>
 <script src="/js/banner.js"></script>
 <script src="/js/cart.js"></script>
 </body>

@@ -21,10 +21,10 @@ if ($_SESSION) {
 				<a href="/admin/products" title="Products">
 				<li>Products</li>
 				</a>
-				<a href="/admin/orders.php" title="Orders">
+				<a href="/admin/orders" title="Orders">
 				<li>Orders</li>
 				</a>
-				<a href="/admin/users.php" title="Orders">
+				<a href="/admin/users" title="Orders">
 				<li>Users</li>
 				</a>
 			</ul>

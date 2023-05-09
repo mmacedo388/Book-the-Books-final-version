@@ -1,17 +1,17 @@
 <?php
 
-require 'common.php';
+require '../common.php';
 
 $id = mysqli_real_escape_string($dbc, $_GET['id'] ?? '');
 if (!$id) {
-    header('Location: /admin/orders.php');
+    header('Location: /admin/orders');
     exit();
 }
 
 $result = mysqli_query($dbc, "SELECT * FROM `order` WHERE id = '$id'");
 
 if (!$result || $result->num_rows === 0) {
-    header('Location: /admin/orders.php');
+    header('Location: /admin/orders');
     exit();
 }
 
@@ -37,14 +37,14 @@ while ($row = mysqli_fetch_assoc($result)) {
 <head>
 <meta charset="utf-8">
 <title>Order #<?php echo $order['id'] ?></title>
-<?php include '../header.php' ?>
+<?php include '../../_head.php' ?>
 <body>
-<?php include '../header-wrapper_admin.php' ?>
+<?php include '../_header.php'; ?>
 
 <div id="orders">
 	<h1>Order #<?php echo $order['id'] ?></h1>
 
-	<a href="/admin/orders.php">Order List</a>
+	<a href="/admin/orders">Order List</a>
 
 	<table class="list-table">
 		<tbody>
@@ -107,8 +107,8 @@ while ($row = mysqli_fetch_assoc($result)) {
 </div>
 
 
-<?php include '../footer.php' ?>
-<script src="./js/banner.js"></script>
-<script src="./js/cart.js"></script>
+<?php include '../../footer.php' ?>
+<script src="/js/banner.js"></script>
+<script src="/js/cart.js"></script>
 </body>
 </html>

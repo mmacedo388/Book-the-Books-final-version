@@ -1,7 +1,6 @@
 <?php
 
-
-require 'common.php';
+require '../common.php';
 
 $result = mysqli_query($dbc, "SELECT id, name, email, phone_number, total, created_at FROM `order` ORDER BY created_at DESC");
 
@@ -15,9 +14,9 @@ if (!$result) {
 <head>
 <meta charset="utf-8">
 <title>Orders</title>
-<?php include '../header.php' ?>
+<?php include '../../_head.php' ?>
 <body>
-<?php include '../header-wrapper_admin.php' ?>
+<?php include '../_header.php'; ?>
 
 <div id="order-list">
 	<h1>Orders</h1>
@@ -56,7 +55,7 @@ if (!$result) {
 				<td><?php echo $row['total'] ?>&euro;</td>
 				<td><?php echo $row['created_at'] ?></td>
 				<td>
-					<a href="/admin/order-view.php?id=<?php echo $row['id'] ?>">View</a>
+					<a href="/admin/orders/view.php?id=<?php echo $row['id'] ?>">View</a>
 				</td>
 			</tr>
 			<?php endwhile ?>
@@ -64,8 +63,7 @@ if (!$result) {
 	</table>
 </div>
 
-
-<?php include '../footer.php' ?>
+<?php include '../../footer.php' ?>
 <script src="/js/banner.js"></script>
 <script src="/js/cart.js"></script>
 </body>

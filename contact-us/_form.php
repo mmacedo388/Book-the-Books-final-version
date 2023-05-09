@@ -1,5 +1,5 @@
 <div class="contact_us">
-  <form method="post" action="processing.php">
+  <form method="post" action="/contact-us/process.php">
     <p>Name : <input type="text" name="user_name" placeholder="Enter Your Name" required /><br /></p>
     <p>Email : <input type="email" name="user_email" placeholder="Enter Your Email" required /><br /></p>
     <p>Gender : <input type="radio" name="user_gender" value="M" required> Male

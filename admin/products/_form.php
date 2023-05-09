@@ -1,4 +1,4 @@
-<form method="post" enctype="multipart/form-data" action="save.php" id="form-product-update">
+<form method="post" enctype="multipart/form-data" action="/admin/products/save.php" id="form-product-update">
 	<input type="hidden" name="page" value="<?php echo $_SERVER['REQUEST_URI'] ?>" />
 
 	<?php if (isset($product['id'])): ?>

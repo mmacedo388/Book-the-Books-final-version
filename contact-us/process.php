@@ -1,5 +1,7 @@
 <?php
 
+require '../connection.php';
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     
 //processing form
@@ -11,7 +13,6 @@ $user_age = $_POST['user_age'];
 $user_message = $_POST['user_message'];
 
     if(!empty($user_name) && !empty($user_email) && !empty($user_gender) && !empty($user_age) && !empty( $user_message)){
-        include('connection.php');
         
         mysqli_query($dbc, "INSERT INTO form(name, email, gender, age, message) VALUES('$user_name', '$user_email', '$user_gender', '$user_age', '$user_message') ");
 

@@ -23,9 +23,9 @@ $product = [
 <head>
 <meta charset="utf-8">
 <title>Create Product</title>
-<?php include '../../header.php' ?>
+<?php include '../../_head.php' ?>
 <body>
-<?php include '../../header-wrapper_admin.php' ?>
+<?php include '../_header.php' ?>
 
 <div id="product-list">
 	<h1>Create Product</h1>
