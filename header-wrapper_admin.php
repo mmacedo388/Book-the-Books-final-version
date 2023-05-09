@@ -24,6 +24,9 @@ if ($_SESSION) {
 				<a href="/admin/orders.php" title="Orders">
 				<li>Orders</li>
 				</a>
+				<a href="/admin/users.php" title="Orders">
+				<li>Users</li>
+				</a>
 			</ul>
 		</div>
 	</div>
