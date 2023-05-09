@@ -14,27 +14,24 @@ if ($_SESSION) {
 <div id="header-wrapper">
 	<div id="header" class="container">
 		<div id="menu">
-			<ul>
 				<a href="/" title="Homepage">
-				<li>Homepage</li>
+				Homepage
 				</a>
 				<a href="/admin/products" title="Products">
-				<li>Products</li>
+				Products
 				</a>
 				<a href="/admin/orders" title="Orders">
-				<li>Orders</li>
+				Orders
 				</a>
 				<a href="/admin/users" title="Orders">
-				<li>Users</li>
+				Users
 				</a>
-			</ul>
 		</div>
 	</div>
-	<div id="menu2">
-		<ul>
+	<div id="user-menu">
 			<?php if (!$user_name) { ?>
 			<a href=""><i class="bi bi-r-circle-fill"></i>
-			<li>Register</li>
+			Register
 			</a>
 			<?php } ?>
 			<?php if ($user_name) { ?>
@@ -42,11 +39,11 @@ if ($_SESSION) {
 			<?php } ?>
 			<?php if (!$user_name) { ?>
 			<a href="/login"><i class="bi bi-person-fill" ></i>
-			<li>Login</li>
+			Login
 			</a>
 			<?php } ?>
 			<a href="./cart.php"><i class="bi bi-cart-fill" ></i>
-			<li>Cart</li>
+			Cart
 			</a>
 			<?php if ($user_name) { ?>
 			<form action="/login/logout.php" method="post" id="logout-form">
@@ -56,7 +53,6 @@ if ($_SESSION) {
 				</button>
 			</form>
 			<?php } ?>
-		</ul>
 	</div>
 		<div id="logo">
 			<img src="/images/logo.png" style="width: 225px!important;">

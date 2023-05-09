@@ -12,44 +12,40 @@ if (isset($_SESSION['user_id'])) {
 }
 ?>
 <div id="header-wrapper">
-	<div id="header" class="container">
-		<div id="menu">
-			<ul>
-				<a href="/" title="Homepage">
-					<li>Homepage</li>
+	<a href="/" id="logo">
+		<img src="/images/logo.png" />
+	</a>
+	<div id="menu">
+			<a href="/catalog" title="Catalog">
+				Catalog
+			</a>
+			<a href="/about-us" title="About Us">
+				About Us
+			</a>
+			<a href="/contact-us" title="Contact Us">
+				Contact Us
+			</a>
+
+			<?php if ($_SERVER['SCRIPT_NAME'] === '/catalog/index.php'): ?>
+			<form id="search" action="/catalog" method="get">
+				<input type="search" class="form-control" name="q" value="<?php echo strip_tags(addslashes($_GET['q'] ?? '')) ?>" />
+				<button type="submit" id="search-btn" class="btn btn-primary"><i class="bi bi-search"></i></button>
+			</form>
+			<?php endif ?>
+
+			<?php if ($user_admin == "1") { ?>
+
+				<a href="/admin" title="Admin">
+					Admin
 				</a>
 
-				<a href="/catalog" title="Catalog">
-					<li>Catalog</li>
-				</a>
-				<a href="/about-us" title="About Us">
-					<li>About Us</li>
-				</a>
-				<a href="/contact-us" title="Contact Us">
-					<li>Contact Us</li>
-				</a>
+			<?php } ?>
 
-				<form id="search" action="/catalog" method="get">
-					<input type="search" class="form-control" name="q" value="<?php echo strip_tags(addslashes($_GET['q'] ?? '')) ?>" />
-					<button type="submit" id="search-btn" class="btn btn-primary"><i class="bi bi-search"></i></button>
-				</form>
-
-				<?php if ($user_admin == "1") { ?>
-
-					<a href="/admin" title="Admin">
-						<li>Admin</li>
-					</a>
-
-				<?php } ?>
-
-			</ul>
-		</div>
 	</div>
-	<div id="menu2">
-		<ul>
+	<div id="user-menu">
 			<?php if (!$user_name) { ?>
 				<a href="/register"><i class="bi bi-r-circle-fill"></i>
-					<li>Register</li>
+					Register
 				</a>
 			<?php } ?>
 			<?php if ($user_name) { ?>
@@ -57,7 +53,7 @@ if (isset($_SESSION['user_id'])) {
 			<?php } ?>
 			<?php if (!$user_name) { ?>
 				<a href="/login"><i class="bi bi-person-fill"></i>
-					<li>Login</li>
+					Login
 				</a>
 			<?php } ?>
 
@@ -76,10 +72,6 @@ if (isset($_SESSION['user_id'])) {
 					</button>
 				</form>
 			<?php } ?>
-		</ul>
-	</div>
-	<div id="logo">
-		<img src="/images/logo.png" style="width: 225px!important" ;">
 	</div>
 </div>
 </div>

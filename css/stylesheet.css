@@ -61,7 +61,6 @@ a:hover {
 
 .container {
     margin: 0px auto;
-    width: 1200px;
 }
 
 /*********************************************************************************/
@@ -154,7 +153,7 @@ ul.contact li a:before {
 
 .button {
     display: inline-block;
-    margin: 1em 2em;
+    margin: 1em auto;
     padding: 1em 2em;
     background: var(--primary-color);
     border-radius: 8px;
@@ -302,10 +301,7 @@ ul.contact li a:before {
 /*********************************************************************************/
 
 #logo {
-    width: 678px;
     display: flex;
-    top: 5px;
-    left: 5px;
     justify-content: center;
 }
 
@@ -314,26 +310,25 @@ ul.contact li a:before {
 /*********************************************************************************/
 
 #menu {
-    position: fixed;
-    top: 25px;
-    width: 65%;
-}
-
-#menu ul {
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+    flex-direction: column;
 }
 
-#menu li {
-    display: inline;
+#menu a {
     background: var(--primary-color);
-    border-radius: 8px;
     color: #fff;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
     padding: 1em 1.5em;
     letter-spacing: 0.2em;
     font-size: 0.9em;
     font-weight: 400;
+    display: block;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    border-radius: 8px;
 }
 
 #menu li:hover {
@@ -344,19 +339,17 @@ ul.contact li a:before {
     cursor: pointer;
 }
 
-#menu2 {
-    position: fixed;
-    top: 5px;
-    right: 15px;
+#user-menu {
+    text-align: center;
 }
 
-#menu2 li,
+#user-menu li,
 #logout-form > button {
     display: inline-block;
 }
 
-#menu2 li,
-#menu2 button {
+#user-menu li,
+#user-menu button {
     color: #f2f2f2 !important;
 }
 
@@ -389,13 +382,29 @@ ul.contact li a:before {
     border: 0;
 }
 
+@media screen and (min-width: 1366px) {
+    #header-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    #menu {
+        flex-direction: row;
+    }
+
+    #menu li {
+        display: inline;
+    }
+}
+
 /*********************************************************************************/
 /* Wrapper                                                                       */
 /*********************************************************************************/
 
 #wrapper1 {
     overflow: hidden;
-    padding: 8em;
     background: #f2f2f2;
     color: rgba(0, 0, 0, 0.8);
 }
@@ -442,12 +451,11 @@ ul.contact li a:before {
 
 #copyright {
     overflow: hidden;
-    padding: 5em;
     text-align: center;
 }
 
 #copyright p {
-    letter-spacing: 0.2em;
+    letter-spacing: 0.1em;
     text-align: center;
     text-transform: uppercase;
     font-size: 0.8em;

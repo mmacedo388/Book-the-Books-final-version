@@ -1,4 +1,4 @@
-<div id="copyright">
+<div id="copyright" class="container">
 	<div class="title">
 		<h2>Book the Books</h2>
 		<span class="byline">Phasellus nec erat sit amet nibh pellentesque congue</span> </div>
