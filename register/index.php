@@ -13,7 +13,7 @@ if (isset($_SESSION['user_id'])) {
 <head>
 	<meta charset="utf-8">
 	<title>Register</title>
-	<?php include '../header.php' ?>
+	<?php include '../_head.php' ?>
 
 <body>
 	<?php
