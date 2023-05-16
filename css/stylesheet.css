@@ -487,14 +487,6 @@ ul.contact li a:before {
 .card {
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.8);
     margin: 8px;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.img_about {
-    padding-top: 5em;
 }
 
 .card-group {
@@ -517,6 +509,7 @@ ul.contact li a:before {
 
 .p_about {
     text-align: justify;
+    margin: 25px auto;
 }
 
 .button_about {
