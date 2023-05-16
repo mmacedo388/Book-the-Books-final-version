@@ -7,7 +7,7 @@
 <body>
 <?php include 'header-wrapper.php' ?>
 <?php include 'slideshow.php' ?>
-<?php include 'welcome.php' ?>
+<?php include '_welcome.php' ?>
 <?php include 'footer.php' ?>
 <script src="./js/banner.js"></script>
 <script src="./js/cart.js"></script>
