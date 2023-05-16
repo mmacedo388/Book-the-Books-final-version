@@ -42,9 +42,16 @@ if ($_SESSION) {
 			Login
 			</a>
 			<?php } ?>
-			<a href="./cart.php"><i class="bi bi-cart-fill" ></i>
-			Cart
-			</a>
+			
+			
+			<?php if (isset($_SESSION['cart'])) : ?>
+			<button data-bs-toggle="modal" data-bs-target="#cartModal">
+				<i class="bi bi-cart-fill"></i>
+				Cart
+			</button>
+		<?php endif ?>
+
+
 			<?php if ($user_name) { ?>
 			<form action="/login/logout.php" method="post" id="logout-form">
 				<button type="submit">
