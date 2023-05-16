@@ -1,14 +1,14 @@
 <?php
 if (!isset($_SESSION)) {
-	session_start();
+    session_start();
 }
 
 if (isset($_SESSION['user_id'])) {
-	$user_admin = $_SESSION['user_admin'];
-	$user_name = $_SESSION['user_name'];
+    $user_admin = $_SESSION['user_admin'];
+    $user_name = $_SESSION['user_name'];
 } else {
-	$user_name = "";
-	$user_admin = "";
+    $user_name = "";
+    $user_admin = "";
 }
 ?>
 <div id="header-wrapper">
@@ -75,3 +75,10 @@ if (isset($_SESSION['user_id'])) {
 	</div>
 </div>
 </div>
+
+
+<?php
+if (isset($_SESSION['cart'])) {
+    include(__DIR__.'/cart/modal.php');
+}
+?>
