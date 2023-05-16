@@ -1,5 +1,5 @@
 <div id="wrapper1">
-	<div id="welcome" class="container" >
+	<div id="welcome" class="container">
 		<div class="title">
 			<h2>Welcome to our website</h2>
 			<span class="byline">Pellentesque euismod tellus quis orci semper, ac viverra nunc sodales.</span> </div>

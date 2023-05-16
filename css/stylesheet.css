@@ -157,8 +157,8 @@ ul.contact li a:before {
 
 .button {
     display: inline-block;
-    margin: 1em auto;
-    padding: 1em 2em;
+    margin: 0.5em auto;
+    padding: .5em 1em;
     background: var(--primary-color);
     border-radius: 8px;
     text-decoration: none;
@@ -494,9 +494,6 @@ ul.contact li a:before {
 }
 
 .card-group {
-    padding: 1em;
-    background-color: #f2f2f2;
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 80%);
     margin: 8px;
     text-align: center;
 }
@@ -544,10 +541,6 @@ ul.contact li a:before {
     }
 }
 
-.about_section {
-    background-color: #f2f2f2 !important;
-    color: rgba(0, 0, 0, 0.8) !important;
-}
 
 /*********************************************************************************/
 /* Catalog                                                                       */
@@ -558,6 +551,13 @@ ul.contact li a:before {
     margin: 1em;
     padding: 1em;
     background-color: #f2f2f2;
+}
+
+@media screen and (min-width: 1024px) {
+    #p-table {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
 
 #p-table td {
@@ -583,26 +583,7 @@ div.p-desc {
     color: rgba(0, 0, 0, 0.8);
     font-size: 18px;
 }
-button.p-add {
-    display: inline;
-    padding: 1em;
-    background: #ff6816;
-    border-radius: 8px;
-    border: none;
-    text-decoration: none;
-    letter-spacing: 0.2em;
-    font-family: "Dancing Script", cursive;
-    font-size: 24px;
-    font-weight: 400px;
-    color: #fff;
-}
 
-button.p-add:hover {
-    text-transform: uppercase;
-    color: #fff;
-    background: #ffd9c5;
-    cursor: pointer;
-}
 
 .p-cell-display {
     display: flex;
@@ -621,6 +602,8 @@ button.p-add:hover {
 
 .p-cell .quantity-and-btn {
     display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 1em;
     gap: 10px;
 }
@@ -628,6 +611,15 @@ button.p-add:hover {
 .p-cell .p-quantity {
     width: 70px;
     text-align: center;
+}
+
+.p-cell input {
+    margin: 0;
+}
+
+.p-cell .button {
+    margin: 0;
+    padding: 0.3em 0.5em;
 }
 
 /*********************************************************************************/
