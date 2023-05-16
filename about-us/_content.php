@@ -11,7 +11,7 @@
         <p class="card-text">CEO & Founder</p>
         <p class="card-text">Some text that describes me lorem ipsum ipsum lorem.</p>
         <p class="card-text">jane@email.com</p>
-        <a href="./contact_us.php" class="button">Contact</a></p>
+        <a href="/contact-us" class="button">Contact</a></p>
       </div>
     </div>
 
@@ -22,7 +22,7 @@
         <p class="card-text">Art Ddirector</p>
         <p class="card-text">Some text that describes me lorem ipsum ipsum lorem.</p>
         <p class="card-text">mike@email.com</p>
-        <a href="./contact_us.php" class="button">Contact</a></p>
+        <a href="/contact-us" class="button">Contact</a></p>
       </div>
     </div>
 
@@ -33,7 +33,7 @@
         <p class="card-text">Designer</p>
         <p class="card-text">Some text that describes me lorem ipsum ipsum lorem.</p>
         <p class="card-text">john@email.com</p>
-        <a href="./contact_us.php" class="button">Contact</a></p>
+        <a href="/contact-us" class="button">Contact</a></p>
       </div>
     </div>
   </div>

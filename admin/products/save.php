@@ -27,7 +27,6 @@ $sub_category = trim(strip_tags(filter_var($sub_category, FILTER_SANITIZE_ADD_SL
 $price = trim(strip_tags(filter_var($price, FILTER_SANITIZE_ADD_SLASHES)));
 $description = trim(strip_tags(filter_var($description, FILTER_SANITIZE_ADD_SLASHES)));
 
-
 $errors = array_filter([
     'name' => !strlen($name),
     'category' => !strlen($category),
