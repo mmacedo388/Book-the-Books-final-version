@@ -53,6 +53,9 @@ if (!empty($errors)) {
     exit();
 }
 
+$_SESSION[$sessionKeyPrefix.'_errors'] = [];
+$_SESSION[$sessionKeyPrefix.'_values'] = [];
+
 //upload start
 if ($_FILES['image']['name'] ?? '') {
     $ext = strtolower(substr($_FILES['image']['name'], -4)); //Pegando extensão do arquivo

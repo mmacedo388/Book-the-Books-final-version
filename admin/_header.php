@@ -23,6 +23,9 @@ if ($_SESSION) {
 				<a href="/admin/categories" title="Categories">
 				Categories
 				</a>
+				<a href="/admin/sub-categories" title="Sub Categories">
+				Sub Categories
+				</a>
 				<a href="/admin/orders" title="Orders">
 				Orders
 				</a>
