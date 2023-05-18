@@ -61,11 +61,16 @@
 	</div>
 </form>
 
+<?php if (isset($product['id'])): ?>
 <form method="post" action="/admin/products/delete.php" id="form-product-delete" onsubmit="return confirm('Are you sure you want to delete this product?')">
 	<input type="hidden" name="id" value="<?php echo $product['id'] ?>" />
 </form>
+<?php endif ?>
 
 <div class="submit-btns">
 	<input type="submit" form="form-product-update" value="<?php echo isset($product['id']) ? 'Save' : 'Create' ?>" />  
+
+	<?php if (isset($product['id'])): ?>
 	<input type="submit" form="form-product-delete" value="Delete" />
+	<?php endif ?>
 </div>

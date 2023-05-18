@@ -2,7 +2,7 @@
 
 require '../common.php';
 
-$result = mysqli_query($dbc, "SELECT id, user, email FROM `user`");
+$result = mysqli_query($dbc, "SELECT * FROM `category`");
 
 if (!$result) {
     exit('query error');
@@ -12,28 +12,32 @@ if (!$result) {
 <html>
 <head>
 <meta charset="utf-8">
-<title>Users</title>
+<title>Categories</title>
 <?php include '../../_head.php' ?>
 <body>
 <?php include '../_header.php' ?>
 
 <div class="admin-list">
-	<h1>Users</h1>
+	<h1>Categories</h1>
 
+	<a href="/admin/categories/create.php">Create</a>
+	
 	<table class="list-table">
 		<thead>
 			<tr>
 				<th>ID</th>
 				<th>Name</th>
-				<th>Email</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
 			<?php while ($row = mysqli_fetch_assoc($result)): ?>
 			<tr>
 				<td><?php echo $row['id'] ?></td>
-				<td><?php echo $row['user'] ?></td>
-				<td><?php echo $row['email'] ?></td>
+				<td><?php echo $row['name'] ?></td>
+				<td>
+					<a href="/admin/categories/edit.php?id=<?php echo $row['id'] ?>">Edit</a>
+				</td>
 			</tr>
 			<?php endwhile ?>
 		</tbody>

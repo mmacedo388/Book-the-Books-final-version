@@ -27,7 +27,7 @@ $product = [
 <body>
 <?php include '../_header.php' ?>
 
-<div id="product-list">
+<div class="admin-list">
 	<h1>Create Product</h1>
 
 	<?php include '_form.php' ?>

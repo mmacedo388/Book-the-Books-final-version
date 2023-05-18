@@ -626,8 +626,7 @@ div.p-desc {
 /* Admin – Order and Product List                                                */
 /*********************************************************************************/
 
-#order-list,
-#product-list {
+.admin-list {
     margin: 100px 20px 0;
     border-radius: 5px;
     background-color: #f2f2f2;
@@ -635,7 +634,7 @@ div.p-desc {
     color: rgba(0, 0, 0, 0.8);
 }
 
-.list-table a {
+.admin-list a {
     color: var(--primary-color);
 }
 

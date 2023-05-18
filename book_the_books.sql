@@ -21,13 +21,33 @@ SET time_zone = "+00:00";
 -- Banco de dados: `book_the_books`
 --
 
+--
+-- Estrutura da tabela 'category'
+--
+CREATE TABLE `category` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
+INSERT INTO `category` (`name`) VALUES ('Literatura');
+
+--
+-- Estrutura da tabela 'sub_category'
+--
+CREATE TABLE `sub_category` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `category_id` int DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `sub_category` (`category_id`, `name`) VALUES ('1', 'Policial e Thriller');
+INSERT INTO `sub_category` (`category_id`, `name`) VALUES ('1', 'Romance');
 
 --
 -- Estrutura da tabela `catalog`
 --
-
 CREATE TABLE `catalog` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,

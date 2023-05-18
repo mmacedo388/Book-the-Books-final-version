@@ -17,8 +17,10 @@ if (!$result) {
 <body>
 <?php include '../_header.php' ?>
 
-<div id="product-list">
+<div class="admin-list">
 	<h1>Products</h1>
+
+	<a href="/admin/products/create.php">Create</a>
 
 	<table class="list-table">
 		<thead>

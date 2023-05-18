@@ -20,6 +20,9 @@ if ($_SESSION) {
 				<a href="/admin/products" title="Products">
 				Products
 				</a>
+				<a href="/admin/categories" title="Categories">
+				Categories
+				</a>
 				<a href="/admin/orders" title="Orders">
 				Orders
 				</a>

@@ -18,7 +18,7 @@ if (!$result) {
 <body>
 <?php include '../_header.php'; ?>
 
-<div id="order-list">
+<div class="admin-list">
 	<h1>Orders</h1>
 
 	<table class="list-table">
