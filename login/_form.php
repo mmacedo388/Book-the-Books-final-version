@@ -1,8 +1,8 @@
-<form method="post" action="/login/process.php">
+<form class="form" method="post" action="/login/process.php">
     <h3>Please login</h3>
 
-    <?php if (isset($_GET['error'])): ?>
-    <div class="error-msg">Invalid data</div>
+    <?php if (isset($_GET['error'])) : ?>
+        <div class="error-msg">Invalid data</div>
     <?php endif ?>
 
     <p>Email: <input type="email" required name="email" maxlength="50"></p>
