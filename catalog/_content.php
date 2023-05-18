@@ -17,11 +17,11 @@ $catalog = mysqli_query($dbc, "SELECT catalog.*, category.name AS category, sub_
 
 <div id="p-table">
 	<?php
-	while ($items = mysqli_fetch_array($catalog)):
-	?>
+    while ($items = mysqli_fetch_array($catalog)):
+        ?>
 	<div>
 			<div class="p-cell">
-				<form method="POST" action="/cart/add-product.php">
+				<form class="form" method="POST" action="/cart/add-product.php">
 					<input type="hidden" name="page" value="<?php echo $_SERVER['REQUEST_URI'] ?>" />
 					<input type="hidden" name="id" value="<?php echo $items['id'] ?>"></input>
 					<div class="p-cell-display">

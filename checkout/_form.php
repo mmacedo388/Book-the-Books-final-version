@@ -9,7 +9,7 @@ $errors = $_SESSION['checkout_errors'] ?? [];
 $_SESSION['checkout_errors'] = [];
 $_SESSION['checkout_form_values'] = [];
 ?>
-<form method="post" action="/checkout/process.php">
+<form class="form" method="post" action="/checkout/process.php">
     <h3>Checkout</h3>
 
 

@@ -1,4 +1,4 @@
-<form method="post" enctype="multipart/form-data" action="/admin/categories/save.php" id="form-category-update">
+<form class="form" method="post" enctype="multipart/form-data" action="/admin/categories/save.php" id="form-category-update">
 	<input type="hidden" name="page" value="<?php echo $_SERVER['REQUEST_URI'] ?>" />
 
 	<?php if (isset($category['id'])): ?>

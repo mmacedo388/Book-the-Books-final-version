@@ -1,13 +1,13 @@
 <?php
-	$result = mysqli_query($dbc, "SELECT sub_category.id, sub_category.name, category.name AS category_name FROM sub_category JOIN category ON sub_category.category_id = category.id");
+$result = mysqli_query($dbc, "SELECT sub_category.id, sub_category.name, category.name AS category_name FROM sub_category JOIN category ON sub_category.category_id = category.id");
 
-	$categories = [];
+$categories = [];
 
-	while ($row = mysqli_fetch_assoc($result)) {
-		$categories[$row['category_name']][$row['id']] = $row['name'];
-	}
+while ($row = mysqli_fetch_assoc($result)) {
+    $categories[$row['category_name']][$row['id']] = $row['name'];
+}
 ?>
-<form method="post" enctype="multipart/form-data" action="/admin/products/save.php" id="form-product-update">
+<form class="form" method="post" enctype="multipart/form-data" action="/admin/products/save.php" id="form-product-update">
 	<input type="hidden" name="page" value="<?php echo $_SERVER['REQUEST_URI'] ?>" />
 
 	<?php if (isset($product['id'])): ?>
@@ -41,7 +41,7 @@
 
 			<optgroup label="<?php echo $categoryName ?>">
 				<?php foreach ($subCategories as $id => $name): ?>
-				<option value="<?php echo $id ?>" <?php echo $id == ($values['sub_category_id'] ?? $product['sub_category_id']) ?'selected' : '' ?>>
+				<option value="<?php echo $id ?>" <?php echo $id == ($values['sub_category_id'] ?? $product['sub_category_id']) ? 'selected' : '' ?>>
 					<?php echo $name ?>
 				</option>
 				<?php endforeach  ?>

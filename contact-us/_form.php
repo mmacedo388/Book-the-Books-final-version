@@ -14,7 +14,7 @@ $_SESSION["contact_us_form_errors"]= [];
 ?>
 
 <div class="contact_us">
-  <form method="post" action="/contact-us/process.php">
+  <form class="form" method="post" action="/contact-us/process.php">
 
 	<?php if ($success): ?>
 		<p class="success-msg">Thank you for your message!</p>

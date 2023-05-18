@@ -18,9 +18,16 @@ if (!$result) {
 <?php include '../_header.php' ?>
 
 <div class="admin-list">
-	<h1>Categories</h1>
+	<h1>
+		Categories
+
+		<a href="/admin/sub-categories">
+			Sub Categories
+		</a>
+	</h1>
 
 	<a href="/admin/categories/create.php">Create</a>
+	
 	
 	<table class="list-table">
 		<thead>

@@ -2,7 +2,7 @@
     $errors = $_GET['errors'] ?? '';
     $errors = explode(',', $errors);
 ?>
-<form method="post" action="/register/process.php">
+<form class="form" method="post" action="/register/process.php">
     <div class="form-row">
         Name: <input type="text" required name="user" maxlength="50">
 
