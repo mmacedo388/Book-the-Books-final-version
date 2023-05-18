@@ -3,13 +3,15 @@ include('../connection.php');
 
 $query = isset($_GET['q']) ? trim(strip_tags(addslashes($_GET['q']))) : null;
 
+$where = '';
+
 if ($query) {
-	$where = "name LIKE '%$query%' OR description LIKE '%$query%' OR category LIKE '%$query%' OR sub_category LIKE '%$query%'";
-	$catalog = mysqli_query($dbc, "SELECT * FROM catalog WHERE $where LIMIT 1000");
-} else {
-	$catalog = mysqli_query($dbc, "SELECT * FROM catalog LIMIT 1000");
+    $where = "WHERE name LIKE '%$query%' OR description LIKE '%$query%' OR category LIKE '%$query%' OR sub_category LIKE '%$query%'";
 }
 
+$catalog = mysqli_query($dbc, "SELECT catalog.*, category.name AS category, sub_category.name AS sub_category FROM `catalog` 
+ JOIN category ON category.id = catalog.category_id
+ JOIN sub_category ON sub_category.id = catalog.sub_category_id $where");
 ?>
 
 
