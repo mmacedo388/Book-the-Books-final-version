@@ -2,7 +2,9 @@
 
 require '../common.php';
 
-$result = mysqli_query($dbc, "SELECT * FROM `catalog`");
+$result = mysqli_query($dbc, "SELECT catalog.*, category.name AS category, sub_category.name AS sub_category FROM `catalog` 
+ JOIN category ON category.id = catalog.category_id
+ JOIN sub_category ON sub_category.id = catalog.sub_category_id");
 
 if (!$result) {
     exit('query error');

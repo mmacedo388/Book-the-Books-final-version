@@ -1,5 +1,5 @@
 <?php
-$categories = mysqli_query($dbc, "SELECT * FROM `category`");
+	$categories = mysqli_query($dbc, "SELECT * FROM `category`");
 ?>
 <form method="post" enctype="multipart/form-data" action="/admin/sub-categories/save.php" id="form-sub-category-update">
 	<input type="hidden" name="page" value="<?php echo $_SERVER['REQUEST_URI'] ?>" />

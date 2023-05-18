@@ -15,22 +15,21 @@ if ($id) {
 }
 
 $name = isset($_POST['name']) ? $_POST['name'] : '';
-$category = isset($_POST['category']) ? $_POST['category'] : '';
-$sub_category = isset($_POST['sub_category']) ? $_POST['sub_category'] : '';
+$sub_category_id = isset($_POST['sub_category_id']) ? $_POST['sub_category_id'] : '';
 $price = isset($_POST['price']) ? $_POST['price'] : '';
 $description = isset($_POST['description']) ? $_POST['description'] : '';
 
 // sanitize/validate
 $name = trim(strip_tags(filter_var($name, FILTER_SANITIZE_ADD_SLASHES)));
-$category = trim(strip_tags(filter_var($category, FILTER_SANITIZE_ADD_SLASHES)));
-$sub_category = trim(strip_tags(filter_var($sub_category, FILTER_SANITIZE_ADD_SLASHES)));
+$sub_category_id = trim(strip_tags(filter_var($sub_category_id, FILTER_SANITIZE_ADD_SLASHES)));
 $price = trim(strip_tags(filter_var($price, FILTER_SANITIZE_ADD_SLASHES)));
 $description = trim(strip_tags(filter_var($description, FILTER_SANITIZE_ADD_SLASHES)));
 
+$categoryResult = $sub_category_id ? mysqli_query($dbc, "SELECT category_id FROM sub_category WHERE id = '$sub_category_id'") : false;
+
 $errors = array_filter([
     'name' => !strlen($name),
-    'category' => !strlen($category),
-    'sub_category' => !strlen($sub_category),
+    'sub_category_id' => !$sub_category_id || !is_numeric($sub_category_id) || !$categoryResult || $categoryResult->num_rows === 0,
     'price' => !strlen($price) || !is_numeric($price) || !$price,
     'description' => !strlen($description),
 ]);
@@ -39,7 +38,7 @@ $errors = array_filter($errors);
 
 $sessionKeyPrefix = $id ? "product_{$id}_form" : 'create_product_form';
 $_SESSION[$sessionKeyPrefix.'_errors'] = array_keys($errors);
-$_SESSION[$sessionKeyPrefix.'_values'] = compact('name', 'category', 'sub_category', 'price', 'description');
+$_SESSION[$sessionKeyPrefix.'_values'] = compact('name', 'sub_category_id', 'price', 'description');
 
 if (!empty($errors)) {
     $page = addslashes($_POST['page'] ?? '');
@@ -67,12 +66,15 @@ if ($_FILES['image']['name'] ?? '') {
     }
 }
 
+$categoryRow = mysqli_fetch_assoc($categoryResult);
+$category_id = $categoryRow['category_id'] ?? null;
+
 if ($id) {
 
     $values = '';
     $values .= "`name` = '$name',";
-    $values .= "`category` = '$category',";
-    $values .= "`sub_category` = '$sub_category',";
+    $values .= "`category_id` = '$category_id',";
+    $values .= "`sub_category_id` = '$sub_category_id',";
     $values .= "`price` = '$price',";
     $values .= "`description` = '$description'";
 
@@ -85,7 +87,7 @@ if ($id) {
 } else {
     $imageFileName = $imageFileName ?? 'NULL';
 
-    $query = "INSERT INTO catalog (`name`, `category`, `sub_category`, `price`, `description`, `img`) VALUES ('$name', '$category', '$sub_category', '$price', '$description', '$imageFileName')";
+    $query = "INSERT INTO catalog (`name`, `category_id`, `sub_category_id`, `price`, `description`, `img`) VALUES ('$name', '$category_id', '$sub_category_id', '$price', '$description', '$imageFileName')";
 }
 
 $result = mysqli_query($dbc, $query);

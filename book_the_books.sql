@@ -31,7 +31,7 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `category` (`name`) VALUES ('Literatura');
-
+INSERT INTO `category` (`name`) VALUES ('Infantil (até 6 anos)');
 --
 -- Estrutura da tabela 'sub_category'
 --
@@ -42,8 +42,10 @@ CREATE TABLE `sub_category` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `sub_category` (`category_id`, `name`) VALUES ('1', 'Policial e Thriller');
-INSERT INTO `sub_category` (`category_id`, `name`) VALUES ('1', 'Romance');
+INSERT INTO `sub_category` (`category_id`, `name`) VALUES (1, 'Policial e Thriller'); 
+INSERT INTO `sub_category` (`category_id`, `name`) VALUES (1, 'Romance');
+INSERT INTO `sub_category` (`category_id`, `name`) VALUES (1, 'Jovem Adulto');
+INSERT INTO `sub_category` (`category_id`, `name`) VALUES (2, 'Ficção');
 
 --
 -- Estrutura da tabela `catalog`
@@ -55,21 +57,21 @@ CREATE TABLE `catalog` (
   `description` varchar(255) NOT NULL,
   `img` varchar(255) NOT NULL,
   `quantity` varchar(255) NOT NULL,
-  `category` varchar(255) NOT NULL,
-  `sub_category` varchar(255) NOT NULL
+  `category_id` int NOT NULL,
+  `sub_category_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `catalog`
 --
 
-INSERT INTO `catalog` (`id`, `name`, `price`, `description`, `img`, `quantity`, `category`, `sub_category`) VALUES
-(1, 'O Buraco da Agulha', '19.90', 'Ken Follett', 'book_1.jpg', '100', 'Literatura', 'Policial e Thriller'),
-(2, 'Ao Cair da Noite', '17.90', 'Judith McNaught', 'book_2.jpg', '50', 'Literatura', 'Romance'),
-(3, 'A Última Odisseia', '18.90', 'James Rollins', 'book_3.jpg', '25', 'Literatura', 'Policial e Thriller'),
-(4, 'Paranoia', '16.90', 'Lisa Jackson', 'book_4.jpg', '15', 'Literatura', 'Policial e Thriller'),
-(5, 'Sol da Meia-Noite', '26.90', 'Stephenie Meyer', 'book_5.jpg', '30', 'Literatura', 'Jovem Adulto'),
-(6, 'D. Filipa de Lencastre', '14.90', 'Isabel Stilwell', 'book_6.jpg', '45', 'Infantil (até 6 anos)', 'Ficção');
+INSERT INTO `catalog` (`id`, `name`, `price`, `description`, `img`, `quantity`, `category_id`, `sub_category_id`) VALUES
+(1, 'O Buraco da Agulha', '19.90', 'Ken Follett', 'book_1.jpg', '100', 1, 1),
+(2, 'Ao Cair da Noite', '17.90', 'Judith McNaught', 'book_2.jpg', '50', 1, 2),
+(3, 'A Última Odisseia', '18.90', 'James Rollins', 'book_3.jpg', '25', 1, 1),
+(4, 'Paranoia', '16.90', 'Lisa Jackson', 'book_4.jpg', '15', 1, 1),
+(5, 'Sol da Meia-Noite', '26.90', 'Stephenie Meyer', 'book_5.jpg', '30', 1, 3),
+(6, 'D. Filipa de Lencastre', '14.90', 'Isabel Stilwell', 'book_6.jpg', '45', 2, 4);
 
 -- --------------------------------------------------------
 

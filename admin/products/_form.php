@@ -1,3 +1,12 @@
+<?php
+	$result = mysqli_query($dbc, "SELECT sub_category.id, sub_category.name, category.name AS category_name FROM sub_category JOIN category ON sub_category.category_id = category.id");
+
+	$categories = [];
+
+	while ($row = mysqli_fetch_assoc($result)) {
+		$categories[$row['category_name']][$row['id']] = $row['name'];
+	}
+?>
 <form method="post" enctype="multipart/form-data" action="/admin/products/save.php" id="form-product-update">
 	<input type="hidden" name="page" value="<?php echo $_SERVER['REQUEST_URI'] ?>" />
 
@@ -24,21 +33,25 @@
 		<?php endif ?>
 	</div>
 
-	<div class="form-row">
-		<label for="product-category">Category</label>
-		<input name="category" id="product-category" type="text" value="<?php echo $values['category'] ?? $product['category'] ?>" placeholder="Please insert a book category" />
-
-		<?php if (in_array('category', $errors)): ?>
-		<div class="error-msg">Invalid Category</div>
-		<?php endif ?>
-	</div>
 
 	<div class="form-row">
-		<label for="product-sub_category">Sub-Category</label>
-		<input name="sub_category" id="product-sub_category" type="text" value="<?php echo $values['sub_category'] ?? $product['sub_category'] ?>" placeholder="Please insert a book sub category" />
+		<label for="sub-category-category-id">Category / Sub Category</label>
+		<select name="sub_category_id" id="sub-category-category-id">
+		<?php foreach ($categories as $categoryName => $subCategories): ?>
 
-		<?php if (in_array('sub_category', $errors)): ?>
-		<div class="error-msg">Invalid Sub Category</div>
+			<optgroup label="<?php echo $categoryName ?>">
+				<?php foreach ($subCategories as $id => $name): ?>
+				<option value="<?php echo $id ?>" <?php echo $id == ($values['sub_category_id'] ?? $product['sub_category_id']) ?'selected' : '' ?>>
+					<?php echo $name ?>
+				</option>
+				<?php endforeach  ?>
+			</optgroup>
+
+		<?php endforeach  ?>
+		</select>
+
+		<?php if (in_array('sub_category_id', $errors)): ?>
+		<div class="error-msg">Invalid Category / Sub Category</div>
 		<?php endif ?>
 	</div>
 
