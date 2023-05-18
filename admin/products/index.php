@@ -40,7 +40,7 @@ if (!$result) {
 		<tbody>
 			<?php while ($row = mysqli_fetch_assoc($result)): ?>
 			<tr>
-				<td><?php echo $row['id'] ?></td>
+				<td class="col-id"><?php echo $row['id'] ?></td>
 				<td>
 					<img src="/images/<?php echo $row['img'] ?>" class="img-fluid img-thumbnail" alt="<?php echo $row['name'] ?>" />
 				</td>

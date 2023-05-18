@@ -644,6 +644,37 @@ div.p-desc {
     border: 1px solid #999;
 }
 
+@media screen and (max-width: 768px) {
+    .list-table {
+        width: 100%;
+    }
+
+    .list-table tr,
+    .list-table td {
+        display: block;
+    }
+
+     .list-table td {
+        border: 0;
+        text-align: center;
+    }
+
+     .list-table tr {
+        border: 1px solid #999;
+    }
+
+    .list-table thead,
+    .list-table .col-id {
+        display: none;
+    }
+
+     .list-table tbody {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+     }
+}
+
 #orders .line > td {
     padding: 0;
 }
