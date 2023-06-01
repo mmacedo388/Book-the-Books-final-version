@@ -6,7 +6,7 @@ $query = isset($_GET['q']) ? trim(strip_tags(addslashes($_GET['q']))) : null;
 $where = '';
 
 if ($query) {
-	$where = "WHERE name LIKE '%$query%' OR description LIKE '%$query%' OR category LIKE '%$query%' OR sub_category LIKE '%$query%'";
+	$where = "WHERE catalog.name LIKE '%$query%' OR catalog.description LIKE '%$query%' OR category.name LIKE '%$query%' OR sub_category.name LIKE '%$query%'";
 }
 
 $catalog = mysqli_query($dbc, "SELECT catalog.*, category.name AS category, sub_category.name AS sub_category FROM `catalog` 
