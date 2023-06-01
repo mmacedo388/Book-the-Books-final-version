@@ -6,7 +6,7 @@ $query = isset($_GET['q']) ? trim(strip_tags(addslashes($_GET['q']))) : null;
 $where = '';
 
 if ($query) {
-    $where = "WHERE name LIKE '%$query%' OR description LIKE '%$query%' OR category LIKE '%$query%' OR sub_category LIKE '%$query%'";
+	$where = "WHERE name LIKE '%$query%' OR description LIKE '%$query%' OR category LIKE '%$query%' OR sub_category LIKE '%$query%'";
 }
 
 $catalog = mysqli_query($dbc, "SELECT catalog.*, category.name AS category, sub_category.name AS sub_category FROM `catalog` 
@@ -17,9 +17,9 @@ $catalog = mysqli_query($dbc, "SELECT catalog.*, category.name AS category, sub_
 
 <div id="p-table">
 	<?php
-    while ($items = mysqli_fetch_array($catalog)):
-        ?>
-	<div>
+	while ($items = mysqli_fetch_array($catalog)) :
+	?>
+		<div>
 			<div class="p-cell">
 				<form class="form" method="POST" action="/cart/add-product.php">
 					<input type="hidden" name="page" value="<?php echo $_SERVER['REQUEST_URI'] ?>" />
@@ -32,13 +32,13 @@ $catalog = mysqli_query($dbc, "SELECT catalog.*, category.name AS category, sub_
 					<div class="p-description"><?php echo $items['description'] ?></div>
 					<div class="p-category"><?php echo $items['category'] ?></div>
 					<div class="p-sub_category"><?php echo $items['sub_category'] ?></div>
-					
+
 					<div class="quantity-and-btn">
-						<input class="p-quantity" type="number" name="quantity" min="1" value="1" >
+						<input class="p-quantity" type="number" name="quantity" min="1" value="1">
 						<button class="button">Add to Cart</button>
 					</div>
 				</form>
 			</div>
-	</div>
+		</div>
 	<?php endwhile ?>
 </div>
